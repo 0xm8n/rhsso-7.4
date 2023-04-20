@@ -11,7 +11,7 @@
             <security-realm name="ManagementRealm">
                 <server-identities>
                     <ssl>
-                        <keystore path="/opt/rh/sso/7.4/keystore/keystore.jks" keystore-password="4G3t1t" alias="rhsso"/>
+                        <keystore path="/opt/rh/sso/7.4/keystore/keystore.jks" keystore-password="Changeit" alias="rhsso"/>
                     </ssl>
                 </server-identities>
                 <authentication>

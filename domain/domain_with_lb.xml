@@ -105,7 +105,7 @@
                         </pool>
                         <security>
                             <user-name>postgres</user-name>
-                            <password>wfh86I4kr</password>
+                            <password>jxfijUIHOInfjnaj</password>
                         </security>
                     </datasource>
                     <drivers>
@@ -577,7 +577,7 @@
                         </pool>
                         <security>
                             <user-name>postgres</user-name>
-                            <password>wfh86I4kr</password>
+                            <password>jxfijUIHOInfjnaj</password>
                         </security>
                     </datasource>
                     <drivers>

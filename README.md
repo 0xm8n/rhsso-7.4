@@ -25,7 +25,7 @@ cd /opt/rh/sso/server/bin
 kcadm.sh config credentials --server http://rhsso:8080/auth --realm master --user admin --client admin-cli
 
 >> For HTTPS (if disable http)
-kcadm.sh config truststore --trustpass 4G3t1t /opt/rh/sso/keystore/keystore.jks
+kcadm.sh config truststore --trustpass Changeit /opt/rh/sso/keystore/keystore.jks
 kcadm.sh config credentials --server https://rhsso:8443/auth --realm master --user admin --client admin-cli
 
 >> Get clients config
@@ -117,7 +117,7 @@ And
                         </pool>
                         <security>
                             <user-name>postgres</user-name>
-                            <password>wfh86I4kr</password>
+                            <password>jxfijUIHOInfjnaj</password>
                         </security>
 ```
 
@@ -191,12 +191,12 @@ $ jboss-cli.sh --connect --controller=localhost:9990
 
 #### Generate key and keystore and add to config
 ```
-keytool -genkeypair -alias rhsso -keyalg EC -keysize 256 -validity 5475 -keystore /opt/rh/sso/keystore/keystore.jks -dname "CN=rhsso" -keypass 4G3t1t -storepass 4G3t1t
+keytool -genkeypair -alias rhsso -keyalg EC -keysize 256 -validity 5475 -keystore /opt/rh/sso/keystore/keystore.jks -dname "CN=rhsso" -keypass Changeit -storepass Changeit
 $ cd /opt/rh/sso/server/bin
 $ jboss-cli.sh --connect --controller=localhost:9990
 
-/profile=auth-server-clustered/subsystem=elytron/key-store=httpsKS:add(path=/opt/rh/sso/keystore/keystore.jks, credential-reference={clear-text=4G3t1t}, type=JKS)
-/profile=auth-server-clustered/subsystem=elytron/key-manager=httpsKM:add(key-store=httpsKS, algorithm="PKIX", credential-reference={clear-text=4G3t1t})
+/profile=auth-server-clustered/subsystem=elytron/key-store=httpsKS:add(path=/opt/rh/sso/keystore/keystore.jks, credential-reference={clear-text=Changeit}, type=JKS)
+/profile=auth-server-clustered/subsystem=elytron/key-manager=httpsKM:add(key-store=httpsKS, algorithm="PKIX", credential-reference={clear-text=Changeit})
 /profile=auth-server-clustered/subsystem=elytron/server-ssl-context=httpsSSC:add(key-manager=httpsKM, protocols=["TLSv1.2"])
 batch
 /profile=auth-server-clustered/subsystem=undertow/server=default-server/https-listener=default:undefine-attribute(name=security-realm)
@@ -235,7 +235,7 @@ Add spi trustore in subsystem "urn:jboss:domain:keycloak-server:1.1"
                     <provider name="file" enabled="true">
                         <properties>
                             <property name="file" value="/opt/rh/sso/keystore/keystore.jks" />
-                            <property name="password" value="4G3t1t" />
+                            <property name="password" value="Changeit" />
                             <property name="hostname-verification-policy" value="WILDCARD"/>
                             <property name="disabled" value="false"/>
                         </properties>
@@ -430,7 +430,7 @@ ADD management certificate
             <security-realm name="ManagementRealm">
                 <server-identities>
                     <ssl>
-                        <keystore path="/opt/rh/sso/keystore/keystore.jks" keystore-password="4G3t1t" alias="rhsso"/>
+                        <keystore path="/opt/rh/sso/keystore/keystore.jks" keystore-password="Changeit" alias="rhsso"/>
                     </ssl>
                 </server-identities>
                 
@@ -439,7 +439,7 @@ ADD application certificate
             <security-realm name="ApplicationRealm">
                 <server-identities>
                     <ssl>
-                        <keystore path="/opt/rh/sso/keystore/appkeystore.jks" keystore-password="4G3t1t" alias="rhsso"/>
+                        <keystore path="/opt/rh/sso/keystore/appkeystore.jks" keystore-password="Changeit" alias="rhsso"/>
                     </ssl>
                 </server-identities>
 

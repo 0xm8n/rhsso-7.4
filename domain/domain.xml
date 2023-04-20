@@ -103,7 +103,7 @@
                         </pool>
                         <security>
                             <user-name>postgres</user-name>
-                            <password>wfh86I4kr</password>
+                            <password>jxfijUIHOInfjnaj</password>
                         </security>
                     </datasource>
                     <drivers>
@@ -255,14 +255,14 @@
                 <tls>
                     <key-stores>
                         <key-store name="httpsKS">
-                            <credential-reference clear-text="4G3t1t"/>
+                            <credential-reference clear-text="Changeit"/>
                             <implementation type="JKS"/>
                             <file path="/opt/rh/sso/7.4/keystore/keystore.jks"/>
                         </key-store>
                     </key-stores>
                     <key-managers>
                         <key-manager name="httpsKM" algorithm="PKIX" key-store="httpsKS">
-                            <credential-reference clear-text="4G3t1t"/>
+                            <credential-reference clear-text="Changeit"/>
                         </key-manager>
                     </key-managers>
                     <trust-managers>
@@ -521,7 +521,7 @@
                     <provider name="file" enabled="true">
                         <properties>
                             <property name="file" value="/opt/rh/sso/7.4/keystore/keystore.jks"/>
-                            <property name="password" value="4G3t1t"/>
+                            <property name="password" value="Changeit"/>
                             <property name="hostname-verification-policy" value="WILDCARD"/>
                             <property name="disabled" value="false"/>
                         </properties>
